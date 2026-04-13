@@ -6,7 +6,9 @@ An autonomous AI agent that monitors Hyperliquid perpetual futures (commodities,
 
 Agents and users pay per-request with USDC micropayments via Soroban authorization.
 
-> Built for the [Agents on Stellar Hackathon](https://dorahacks.io/hackathon/stellar-agents-x402-stripe-mpp/detail) by [ZERA](https://zero-human-labs.com)
+> Built for the [Agents on Stellar Hackathon](https://dorahacks.io/hackathon/stellar-agents-x402-stripe-mpp/detail) by [Zero Human Labs](https://zero-human-labs.com)
+
+**[Video Demo](https://youtu.be/YUqhQFxMNIc)**
 
 ---
 
@@ -197,7 +199,21 @@ monitor-the-situation-stellar/
 
 **WIP:**
 - [ ] xyz: namespace assets in risk scoring (currently perps only in API)
-- [ ] Video demo
+
+## Stellar Testnet Proof
+
+Live E2E demo executed — all transactions verifiable on Stellar testnet:
+
+| Transaction | Operation | Explorer |
+|-------------|-----------|----------|
+| Account creation (Friendbot) | `create_account` | [View](https://stellar.expert/explorer/testnet/op/8627906397908993) |
+| USDC trustline | `change_trust` | [View](https://stellar.expert/explorer/testnet/op/8627910692859905) |
+| XLM → USDC swap (testnet DEX) | `path_payment_strict_send` | [View](https://stellar.expert/explorer/testnet/op/8627914987814913) |
+
+- **Payer:** [`GD5XMO...DJUYS`](https://stellar.expert/explorer/testnet/account/GD5XMOUUQBIJDFJ6T4LCS5TWWQJURLVOC5D6ISVHT72DBUUNXNODJUYS)
+- **Gateway:** [`GA64KD...476S7`](https://stellar.expert/explorer/testnet/account/GA64KD2Y3ZRZGSIGXOXL7AMNNAWEF7QJUBALIFPRX7IWYYHSMUJ476S7)
+
+Reproduce: `cd stellar-gateway && npm run setup:testnet && npm run demo:e2e`
 
 ## Tech Stack
 
